@@ -19,7 +19,11 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-
+    for a in range(0, len(arr)-1):
+        for b in range(0, len(arr)-a-1):
+            if arr[b] > arr[b+1]:
+                # swap
+                arr[b], arr[b+1] = arr[b+1], arr[b]
     return arr
 
 
