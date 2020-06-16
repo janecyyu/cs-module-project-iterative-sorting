@@ -7,9 +7,9 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-        for left in range(cur_index+1, len(arr)):
-            if arr[left] < arr[smallest_index]:
-                smallest_index = left
+        for unsorted in range(cur_index+1, len(arr)):
+            if arr[unsorted] < arr[smallest_index]:
+                smallest_index = unsorted
         # TO-DO: swap
         # Your code here
         arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
@@ -17,14 +17,25 @@ def selection_sort(arr):
 
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort(arr):
-    # Your code here
-    for a in range(0, len(arr)-1):
-        for b in range(0, len(arr)-a-1):
-            if arr[b] > arr[b+1]:
-                # swap
-                arr[b], arr[b+1] = arr[b+1], arr[b]
-    return arr
+def bubble_sort(arr, unsorted_len):
+    # # Your code here
+    # for a in range(0, len(arr)-1):
+    #     for b in range(0, len(arr)-a-1):
+    #         if arr[b] > arr[b+1]:
+    #             # swap
+    #             arr[b], arr[b+1] = arr[b+1], arr[b]
+    # return arr
+
+    # recursive --
+    # base case
+    # once we get to an empty unsorted portion, then everything is sorted
+
+    for i in range(0, len(arr)-1):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1]+arr[i+1], arr[i]
+    # check if there's more sorting to do
+    if unsorted_len > 0:
+        bubble_sort(arr, unsorted_len-1)
 
 
 '''

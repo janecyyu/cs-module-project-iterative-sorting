@@ -25,5 +25,20 @@ def binary_search(arr, target):
         else:
             # found
             return mid
-
     return -1  # not found
+
+    # low = 0
+    # high = len(arr) - 1
+
+    # while low <= high:
+    #     mid = (low+high) // 2
+
+    #     if arr[mid] == target:
+    #         return mid
+    #     elif target < arr[mid]:
+    #         # go right
+    #         high = mid - 1
+    #     else:
+    #         low = mid + 1
+
+    # return -1  # not found
