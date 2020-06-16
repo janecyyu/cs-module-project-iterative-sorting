@@ -46,7 +46,26 @@ What is the time and space complexity of the counting sort algorithm?
 '''
 
 
-def counting_sort(arr, maximum=None):
+def count_sort(arr, maximum=None):
     # Your code here
+    res = []
+    min_num = 0
+    max_num = 0
 
-    return arr
+    freq = {}
+
+    for num in arr:
+        if num < 0:
+            return "Error, negative numbers not allowed in Count Sort"
+        min_num = min(num, min_num)
+        max_num = max(num, max_num)
+        if num in freq:
+            freq[num] += 1
+        else:
+            freq[num] = 1
+
+    for num in range(min_num, max_num+1):
+        if num in freq:
+            for i in range(freq[num]):
+                res.append(num)
+    return res
