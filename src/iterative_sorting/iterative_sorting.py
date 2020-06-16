@@ -48,10 +48,14 @@ What is the time and space complexity of the counting sort algorithm?
 
 def count_sort(arr, maximum=None):
     # Your code here
-    res = []
-    min_num = 0
-    max_num = 0
+    if not arr:
+        return []
 
+    res = []
+    min_num = float("inf")
+    max_num = float("-inf")
+
+    # create a empty dictionary
     freq = {}
 
     for num in arr:
@@ -64,7 +68,7 @@ def count_sort(arr, maximum=None):
         else:
             freq[num] = 1
 
-    for num in range(min_num, max_num+1):
+    for num in range(min_num, max_num + 1):
         if num in freq:
             for i in range(freq[num]):
                 res.append(num)
